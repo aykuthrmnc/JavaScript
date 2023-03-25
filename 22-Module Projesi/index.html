@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2214b0cde0.js" crossorigin="anonymous"></script>
+    <style>
+        #item-list tr:last-child{
+            border-bottom: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-danger">
+        <div class="container">
+            <a href="#" class="navbar-brand">Oem Calculator</a>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="productName" placeholder="Name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="productPrice" placeholder="Price">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm addBtn"><i class="fa fa-plus"></i> Add</button>
+                    <button type="submit" class="btn btn-warning btn-sm updateBtn"><i class="far fa-edit"></i> Save Changes</button>
+                    <button type="submit" class="btn btn-danger btn-sm deleteBtn"><i class="fa fa-times"></i> Delete</button>
+                    <button type="submit" class="btn btn-secondary btn-sm cancelBtn"><i class="fa fa-arrow-circle-left"></i> Cancel</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="productCard" class="card mt-3 productCard">
+            <table class="table">
+                <tbody id="item-list">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="productTotal" class="card mt-3">
+            <div class="card-footer text-end">
+                <p>Total (TL) <strong><span id="totalTL">0</span> TL</strong></p>
+                <p>Total ($) <strong><span id="totalDolar">0</span> $</strong></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="profileContainer" class="mt-3"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

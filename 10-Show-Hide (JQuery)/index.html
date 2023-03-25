@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show-Hide Effects (JQuery)</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+           $("#hide").click(function() {
+               $("p").hide(3000);
+           });
+           $("#show").click(function() {
+               $("p").show("fast",function() {
+                   alert("Paragraph Showing");
+               });
+           });
+           $("#toggle").click(function() {
+               $("p").toggle("slow");
+           });
+        });
+    </script>
+</body>
+</html>

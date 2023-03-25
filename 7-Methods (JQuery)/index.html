@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Content (JQuery)</title>
+    <style>
+        .highlight{
+            background-color: yellow;
+            display: none;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>JQuery Helper Methods</h1>
+    <ul>
+        <li>JQuery Selectors</li>
+        <li>JQuery Methods</li>
+        <li>JQuery Animations</li>
+    </ul>
+    <img src="koala.png" width="200px">
+    <input id="ad" type="text" placeholder="Adınız">
+    <input id="soyad" class="green" type="text" placeholder="Soyadınız">
+    <button id="btnKaydet" onclick="adsoyad()">Kaydet</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        // console.log($("h1").text());
+        // $("h1").text("JavaScript");
+        // $("input").val("ssss");
+
+        // $("img").attr("width","400px");
+        // $("img").hide("slow");
+        // $("img").show("slow");
+        
+        function adsoyad() {
+            var ad = $("#ad").val();
+            var soyad = $("#soyad").val();
+            console.log(ad + " " + soyad);
+
+            $("#ad").toggleClass("highlight");
+            // $("#ad").addClass("highlight");
+            $("#soyad").removeClass("green");
+        }
+    </script>
+</body>
+</html>

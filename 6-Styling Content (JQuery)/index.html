@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Content (JQuery)</title>
+</head>
+
+<body>
+    <a href="#">link</a>
+    <h3 id="header">JQuery Dersleri</h3>
+    <ul id="liste">
+        <li class="item">JQuery Reference</li>
+        <li>Selectors <a href="#">link</a></li>
+        <li class="item">JQuery Plugins</li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        // document.getElementById("header").style.color = "red";
+        $("#header").css("color", "blue");
+        // $("#liste a").css("text-decoration","none");
+        $("a").css("text-decoration", "none");
+
+        // var listeler = document.querySelectorAll("li");
+        // for (let i = 0; i < listeler.length; i++) {
+        //     listeler[i].style.color = "red";
+        // }
+        var styles = {
+            "color": "red",
+            "font-size": "20px",
+            "border": "1px solid red"
+        }
+        $("ul li").css(styles);
+
+        $("a").css({
+            "color": "yellow",
+            "font-size": "20px",
+            "border": "1px solid red"
+        });
+
+        $(".item").css({
+            display: "none"
+        });
+    </script>
+</body>
+
+</html>

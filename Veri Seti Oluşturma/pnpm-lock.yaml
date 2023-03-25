@@ -1,0 +1,14 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@faker-js/faker': ^7.6.0
+
+devDependencies:
+  '@faker-js/faker': 7.6.0
+
+packages:
+
+  /@faker-js/faker/7.6.0:
+    resolution: {integrity: sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==}
+    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    dev: true

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors (JQuery)</title>
+</head>
+<body>
+    <h3>JQuery Dersleri</h3>
+    <ul id="liste">
+        <li class="item">JQuery Reference</li>
+        <li>Selectors <a href="#">link</a></li>
+        <li class="item">JQuery Plugins</li>
+    </ul>
+    <ul>
+        <li class="item">JQuery Reference</li>
+        <li>Selectors <a href="#">link</a></li>
+        <li class="item">JQuery Plugins</li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        console.log($("#liste"));
+        console.log($("h3"));
+        console.log($("ul"));
+        console.log($("li"));
+        console.log($(".item"));
+        console.log($("a"));
+        console.log($("li>a"));
+        console.log($("ul li a"));
+        console.log($("#liste a"));
+    </script>
+</body>
+</html>

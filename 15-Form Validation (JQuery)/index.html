@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example (JQuery)</title>
+    <style>
+        body {
+            font-size: 180%;
+        }
+
+        input {
+            padding: 15px;
+            font-size: 25px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            width: 70%;
+        }
+
+        label {
+            display: inline-block;
+            width: 170px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        #wrapper {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="error"></div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" placeholder="Your email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input id="phone" name="phone" type="text" placeholder="Your phone" maxlength="11">
+        </div>
+        <div class="form-group">
+            <label for="password">Parola</label>
+            <input id="password" name="password" type="password" placeholder="Your password">
+        </div>
+        <div class="form-group">
+            <label for="repassword">Parola Tekrar</label>
+            <input id="repassword" name="repassword" type="password" placeholder="Re-enter your password">
+        </div>
+        <button id="btn">Kaydet</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+
+            function isEmail(email) {
+                var pattern = /\S+@\S+\.\S+/;
+                // var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                return pattern.test(email);
+            }
+
+            $("#btn").click(function () {
+                var errorMessage = "";
+                $("#error").html("");
+
+                if ($("#email").val() == "") {
+                    errorMessage += "<p>Email alanını doldurunuz.</p>";
+                }
+                else if (isEmail($("#email").val()) == false) {
+                    errorMessage += "<p>Email alanı hatalıdır.</p>";
+                }
+
+                if ($("#phone").val() == "") {
+                    errorMessage += "<p>Telefon alanını doldurunuz.</p>";
+                }
+                else if ($.isNumeric($("#phone").val())==false) {
+                    errorMessage += "<p>Telefon alanı hatalıdır.</p>";
+                }
+
+                if ($("#password").val() == "") {
+                    errorMessage += "<p>Şifre alanını doldurunuz.</p>";
+                }
+
+                if ($("#password").val() != $("#repassword").val()) {
+                    errorMessage += "<p>Parola alanları eşleşmiyor.</p>";
+                }
+
+                if (errorMessage != "") {
+                    $("#error").html(errorMessage);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
